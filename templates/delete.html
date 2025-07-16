@@ -1,0 +1,18 @@
+<!-- templates/delete.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Candidate</title>
+</head>
+<body>
+    <h2>Are you sure you want to delete this candidate?</h2>
+
+    <p><strong>{{ candidate.name }}</strong> - {{ candidate.email }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'candidates_list' %}">Cancel</a>
+    </form>
+</body>
+</html>

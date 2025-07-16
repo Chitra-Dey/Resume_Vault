@@ -1,0 +1,18 @@
+<!-- templates/edit.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Candidate</title>
+</head>
+<body>
+    <h2>Edit Candidate Details</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+
+    <a href="{% url 'candidates_list' %}">Back to List</a>
+</body>
+</html>
