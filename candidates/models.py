@@ -11,14 +11,13 @@ class Cususer(AbstractUser):
 class Candidate(models.Model):
 	name = models.CharField(max_length=255)
 	email= models.EmailField(unique=True)
-	phone= models.CharField(max_length=12 )
+	phone= models.CharField(max_length=12)
 	resume = models.FileField(upload_to='resume/')
 	image = models.ImageField(upload_to='image/')
 	skills= models.TextField()
 	date= models.DateTimeField(auto_now_add=True)
 	user = models.ForeignKey(settings.AUTH_USER_MODEL,null=True, blank=True, on_delete=models.CASCADE)
      
-
      
 class StudentProfile(models.Model):
     user = models.OneToOneField(
